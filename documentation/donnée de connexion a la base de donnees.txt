@@ -1,0 +1,6 @@
+ donnée de connexion a la base de donnees:
+
+ ip: 192.168.1.40;
+ db: miniJira
+ user: root
+ password: formation
