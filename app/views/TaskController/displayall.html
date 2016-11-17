@@ -13,7 +13,7 @@
             Description: ${task.content} <br />
             <a>Utilisateur associé:<SELECT name="user" >
                                         #{list items:listUsers, as:'user'}
-                                            <OPTION value="${user.id}" selected>${user.name}</OPTION>
+                                            <OPTION value="${user.id}" ${(task.user && (user.id == task.user.id)) ? "selected" : ""}>${user.name}</OPTION>
                                         #{/list}
                                     </SELECT>
                 <input type="submit" value="Changer utilisateur"><br>
