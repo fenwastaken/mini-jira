@@ -20,7 +20,7 @@ public class Task extends Model {
 		super();
 	}
 	
-	public Task(String name, String content, boolean urgent, Timestamp creation) {
+	public Task(String name, String content, boolean urgent) {
 		super();
 		this.name = name;
 		this.content = content;
