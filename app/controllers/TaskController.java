@@ -11,6 +11,7 @@ import java.util.List;
 public class TaskController extends Controller{
     public static void create(){ render(); }
 
+    //add this back in the params once projects are manageable: @Required int idProject
     public static void save(@Required String name, @Required String content, @Required Boolean urgent){
         if (validation.hasErrors()) {
             params.flash();
@@ -22,9 +23,11 @@ public class TaskController extends Controller{
         task.name = name;
         task.content = content;
         task.urgent = urgent;
+        task.idProject = 1;
         task.save();
         //render(task);
         displayall();
+        //patate
     }
 
     public static void displayall(){
