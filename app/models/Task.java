@@ -9,11 +9,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Task extends Model {
 
-	
+	@OneToOne
+	public User user;
+
 	public String name;
 	public String content;
 	public boolean urgent;
