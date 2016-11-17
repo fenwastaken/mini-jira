@@ -1,7 +1,8 @@
 package controllers;
 
 
-import play.data.validation.Required;
+import models.Task;
+import play.data.validation.*;
 import play.mvc.Controller;
 
 public class TaskController extends Controller{
