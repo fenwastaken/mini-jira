@@ -3,7 +3,7 @@
 
 <ul>
 #{list items:listTasks, as:'task'}
-    <li>${task.name}   /  ${task.content}  /  ${task.creation} + ${task.urgent ? "Urgent" : ""} </li>
+    <li>${task.name}   /  ${task.content}   / ${task.urgent ? "" : "Urgent"} </li>
 #{/list}
 </ul>
 
