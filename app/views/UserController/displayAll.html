@@ -3,7 +3,7 @@
 
 <ul>
 #{list items:listUsers, as:'user'}
-    <li>Nom:${user.name},  Password:${user.password}, Avatar:${user?.avatar}</li>
+    <li>Nom:${user.name},  Password:${user.password}, Avatar:<image src=${user?.avatar} height=200 width=200></image></li>
 #{/list}
 </ul>
 
