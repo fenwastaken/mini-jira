@@ -1,18 +1,16 @@
 package models;
 
-import play.db.jpa.Model;
+public class User {
 
-import java.util.UUID;
-
-public class User extends Model{
-
-	public String name;
-
-	public User(){}
-
-	public User(String name) {
+	String name;
+	String password;
+	String avatar;
+	
+	public User(String name, String password, String avatar) {
 		super();
 		this.name = name;
+		this.password = password;
+		this.avatar = avatar;
 	}
 	
 }
