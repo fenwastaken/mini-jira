@@ -7,13 +7,11 @@
 <body>
 
 	<form action="@{UserController.save}" method="post">
-		<a>Nom utilisateur:<input type="text"></a> <br> <a>Mot
-			de passe:<input type="password">
-		</a> <br> <a>Lien avatar:<input type="text" value="Avatar"></a><br>
+		<a>Nom utilisateur:<input type="text" name="name"></a> <br> <a>Mot
+			de passe:<input type="password" name="password">
+		</a> <br> <a>Lien avatar:<input type="text" name="avatar"></a><br>
 		<input type="submit" value="Créer utilisateur"><br>
 	</form>
 	<a href="/">Retour</a>
 </body>
 </html>
-
-<!-- patate -->
