@@ -2,6 +2,7 @@ package controllers;
 
 
 import models.Task;
+import models.User;
 import play.data.validation.*;
 import play.mvc.Controller;
 
@@ -31,9 +32,14 @@ public class TaskController extends Controller{
 
     public static void displayall(){
         List<Task> listTasks = Task.findAll();
-        render(listTasks);
+        List<User> listUsers = User.findAll();
+        render(listTasks, listUsers);
     }
 
+    public static void changeUserTask(){
+        displayall();
+
+    }
     public static void afficher(){
 
     }

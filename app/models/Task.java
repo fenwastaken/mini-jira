@@ -5,11 +5,14 @@ import java.sql.Timestamp;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Task extends Model {
 
-	
+	@OneToOne
+	public User user;
+
 	public String name;
 	public String content;
 	public boolean urgent;

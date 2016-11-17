@@ -3,7 +3,22 @@
 
 <ul>
 #{list items:listTasks, as:'task'}
-    <li>${task.name}   /  ${task.content}   / ${task.urgent ? "" : "Urgent"} </li>
+    <li>${task.name}:<br />
+
+        Date de création: ${task.creation}
+        *{@{if (task.urgent == 1) }*
+
+        <form action="@{TaskController.changeUserTask}" method="post">
+            Nom de la tache: ${task.name} ${task.urgent ? "" : "(Urgent)"} <br />
+            Description: ${task.content} <br />
+            <a>Utilisateur associé:<SELECT name="user" >
+                                        #{list items:listUsers, as:'user'}
+                                            <OPTION value="${user.id}" selected>${user.name}</OPTION>
+                                        #{/list}
+                                    </SELECT>
+                <input type="submit" value="Changer utilisateur"><br>
+        </form>
+    </li>
 #{/list}
 </ul>
 
