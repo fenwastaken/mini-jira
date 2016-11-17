@@ -7,9 +7,9 @@ import javax.persistence.Entity;
 @Entity
 public class User extends Model {
 
-	String name;
-	String password;
-	String avatar;
+	public String name;
+	public String password;
+	public String avatar;
 
     public User (){}
 
