@@ -16,8 +16,8 @@ GET     /favicon.ico                            404
 GET     /public/                                staticDir:public
 
 # Catch all
-#*       /{controller}/{action}                  {controller}.{action}
+*       /{controller}/{action}                  {controller}.{action}
 
 # Tâche
-#GET     /task/create                         Task.create
-#POST    /task/create                         Task.save
+GET     /task/create                         TaskController.create
+POST    /task/create                         TaskController.save

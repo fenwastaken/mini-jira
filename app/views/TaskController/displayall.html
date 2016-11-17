@@ -3,14 +3,14 @@
 #{extends 'main.html'/}
 
 
-<ul>
-#{list items:listTasks, as:'Task'}
-    <li>${Task.name}<br />
-        ${Task.content}
+*{<ul>}*
+*{#{list items:panier.produits, as:'Task'}}*
+    *{<li>${Task.name}<br />}*
+        *{${Task.content}}*
         *{${Task.creationDate.format("dd/MM/yyyy")}}*
-    </li>
-#{/list}
-</ul>
+    *{</li>}*
+*{#{/list}}*
+*{</ul>}*
 
 
 
