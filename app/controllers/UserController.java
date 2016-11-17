@@ -18,4 +18,11 @@ public class UserController extends Controller{
         user.save();
         render(user);
     }
+
+    public static void login(@Required String name, @Required String password){
+
+
+        user.login();
+
+    }
 }
