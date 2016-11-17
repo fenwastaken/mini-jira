@@ -28,5 +28,4 @@ public class UserController extends Controller{
         List<Task> listUsers = User.findAll();
         render(listUsers);
     }
-    //patate
 }
