@@ -1,16 +1,14 @@
 #{extends 'main.html'/}
 
-#{extends 'main.html'/}
 
-
-*{<ul>}*
-*{#{list items:panier.produits, as:'Task'}}*
-    *{<li>${Task.name}<br />}*
-        *{${Task.content}}*
-        *{${Task.creationDate.format("dd/MM/yyyy")}}*
-    *{</li>}*
-*{#{/list}}*
-*{</ul>}*
+<ul>
+#{list items:listTasks, as:'task'}
+    <li>${task.name}<br />
+        ${task.content}
+        ${task.creation}
+    </li>
+#{/list}
+</ul>
 
 
 

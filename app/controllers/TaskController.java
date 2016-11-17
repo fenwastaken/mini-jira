@@ -28,8 +28,7 @@ public class TaskController extends Controller{
     }
 
     public static void displayall(){
-        List<Task> listTasks = new ArrayList();
-        listTasks = Task.findAll();
+        List<Task> listTasks = Task.findAll();
         render(listTasks);
     }
 
