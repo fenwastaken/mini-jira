@@ -10,7 +10,6 @@ public class Status {
 	
 	public Status(String name) {
 		super();
-		this.id = UUID.randomUUID().toString();
 		this.name = name;
 	}	
 	
