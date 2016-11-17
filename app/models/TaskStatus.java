@@ -1,6 +1,7 @@
 package models;
 
 import java.sql.Timestamp;
+import java.util.UUID;
 
 public class TaskStatus {
 
@@ -9,9 +10,9 @@ public class TaskStatus {
 	String idStatus;
 	Timestamp date;
 	
-	public TaskStatus(String id, String idTask, String idStatus) {
+	public TaskStatus(String idTask, String idStatus) {
 		super();
-		this.id = id;
+		this.id = UUID.randomUUID().toString();
 		this.idTask = idTask;
 		this.idStatus = idStatus;
 	}
