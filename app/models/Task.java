@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 
 @Entity
 public class Task extends Model {
+
 	
 	public String name;
 	public String content;

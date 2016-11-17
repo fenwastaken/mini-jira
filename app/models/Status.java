@@ -4,7 +4,6 @@ import java.util.UUID;
 
 public class Status {
 	
-	String id;
 	String name;
 	
 	
