@@ -12,7 +12,6 @@ public class TaskStatus {
 	
 	public TaskStatus(String idTask, String idStatus) {
 		super();
-		this.id = UUID.randomUUID().toString();
 		this.idTask = idTask;
 		this.idStatus = idStatus;
 	}

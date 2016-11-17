@@ -12,7 +12,6 @@ public class TaskUser {
 	
 	public TaskUser(String idUser, String idTask, Timestamp date) {
 		super();
-		this.id = UUID.randomUUID().toString();
 		this.idUser = idUser;
 		this.idTask = idTask;
 		this.date = date;

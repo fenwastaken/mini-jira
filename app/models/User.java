@@ -9,7 +9,6 @@ public class User {
 	
 	public User(String name) {
 		super();
-		this.id = UUID.randomUUID().toString();
 		this.name = name;
 	}
 	
