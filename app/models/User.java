@@ -1,14 +1,16 @@
 package models;
 
-import java.util.UUID;
-
 public class User {
 
 	String name;
+	String password;
+	String avatar;
 	
-	public User(String name) {
+	public User(String name, String password, String avatar) {
 		super();
 		this.name = name;
+		this.password = password;
+		this.avatar = avatar;
 	}
 	
 }
