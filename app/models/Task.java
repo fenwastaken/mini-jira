@@ -24,8 +24,8 @@ public class Task extends Model {
 		super();
 		this.name = name;
 		this.content = content;
-		this.urgent = urgent;
-		this.creation = creation;
+		this.urgent = urgent;		
+		this.creation = new Timestamp(System.currentTimeMillis());
 	}
 	
 }

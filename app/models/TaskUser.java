@@ -14,7 +14,7 @@ public class TaskUser {
 		super();
 		this.idUser = idUser;
 		this.idTask = idTask;
-		this.date = date;
+		this.date = new Timestamp(System.currentTimeMillis());
 	}
 	
 }

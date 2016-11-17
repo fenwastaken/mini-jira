@@ -14,6 +14,7 @@ public class TaskStatus {
 		super();
 		this.idTask = idTask;
 		this.idStatus = idStatus;
+		this.date = new Timestamp(System.currentTimeMillis());
 	}
 	
 }
