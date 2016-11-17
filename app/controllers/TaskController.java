@@ -27,7 +27,6 @@ public class TaskController extends Controller{
         task.save();
         //render(task);
         displayall();
-        //patate
     }
 
     public static void displayall(){
