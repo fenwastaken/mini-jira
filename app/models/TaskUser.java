@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class TaskUser {
 
-	String id;
+
 	String idUser;
 	String idTask;
 	Timestamp date;

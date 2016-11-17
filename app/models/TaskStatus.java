@@ -5,7 +5,6 @@ import java.util.UUID;
 
 public class TaskStatus {
 
-	String id;
 	String idTask;
 	String idStatus;
 	Timestamp date;
