@@ -5,6 +5,10 @@
 # Home page
 GET     /                                       Application.index
 
+# Task
+GET     /task/create                            TaskController.create
+POST    /task/create                            TaskController.save
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
