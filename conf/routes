@@ -9,6 +9,9 @@ GET     /                                       Application.index
 GET     /task/create                         TaskController.create
 POST    /task/create                         TaskController.save
 
+GET     /user/create                         UserController.create
+POST    /user/create                         UserController.save
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
