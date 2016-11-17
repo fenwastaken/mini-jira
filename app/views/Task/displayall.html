@@ -1,0 +1,17 @@
+#{extends 'main.html'/}
+
+#{extends 'main.html'/}
+
+
+<ul>
+#{list items:listTasks, as:'Task'}
+    <li>${Task.name}<br />
+        ${Task.content}
+        *{${Task.creationDate.format("dd/MM/yyyy")}}*
+    </li>
+#{/list}
+</ul>
+
+
+
+<a href="@{Application.index}">Retour vers l'accueil</a>

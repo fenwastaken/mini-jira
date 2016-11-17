@@ -1,0 +1,15 @@
+#{extends 'main.html'/}
+
+
+<ul>
+#{list items:listTasks, as:'task'}
+    <li>${task.name}<br />
+        ${task.content}
+        ${task.creation}
+    </li>
+#{/list}
+</ul>
+
+
+
+<a href="@{Application.index}">Retour vers l'accueil</a>

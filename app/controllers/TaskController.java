@@ -5,6 +5,9 @@ import models.Task;
 import play.data.validation.*;
 import play.mvc.Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TaskController extends Controller{
     public static void create(){ render(); }
 
@@ -20,7 +23,17 @@ public class TaskController extends Controller{
         task.content = content;
         task.urgent = urgent;
         task.save();
-        render(task);
+        //render(task);
+        displayall();
+    }
+
+    public static void displayall(){
+        List<Task> listTasks = Task.findAll();
+        render(listTasks);
+    }
+
+    public static void afficher(){
+
     }
 
 }
