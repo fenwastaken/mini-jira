@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>NOUVEL UTILISATEUR</title>
+<meta charset="UTF-8">
+<title>NOUVEL UTILISATEUR</title>
 </head>
 <body>
 
-<form action="@{UserController.save}" method="post">
-    <input type="submit" value="nouveau user">
-</form>
-
+	<form action="@{UserController.save}" method="post">
+		<a>Nom utilisateur:<input type="text"></a> <br> <a>Mot
+			de passe:<input type="password">
+		</a> <br> <a>Lien avatar:<input type="text" value="Avatar"></a><br>
+		<input type="submit" value="Créer utilisateur"><br>
+	</form>
+	<a href="/">Retour</a>
 </body>
 </html>
+
+<!-- patate -->

@@ -1,0 +1,15 @@
+#{extends 'main.html'/}
+
+
+<ul>
+#{list items:listUsers, as:'user'}
+    <li>${user.name}<br />
+        ${user.password}
+        ${task.avatar}
+    </li>
+#{/list}
+</ul>
+
+
+
+<a href="@{Application.index}">Retour vers l'accueil</a>
