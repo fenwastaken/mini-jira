@@ -11,23 +11,24 @@ public class ProjectController extends Controller {
 	public static void create(){ render(); }
 
     //add this back in the params once projects are manageable: @Required int idProject
-    public static void save(@Required String name){
+    public static void save(@Required String name, @Required String description){
         if (validation.hasErrors()) {
             params.flash();
             validation.keep();
             create();
         }
 
-        Task task = new Task();
-        task.name = name;
-        task.save();
+        Project project = new Project(name, description);
+        project.name = name;
+        project.description = description;
+        project.save();
         //render(Project);
         displayall();
     }
 
 	public static void displayall(){
-        List<Project> listProjects = Project.findAll();
-        render(listProjects);
+       // List<Project> listProjects = Project.findAll();
+        //render(listProjects);
     }
 
     public static void changeProjectTask(){
