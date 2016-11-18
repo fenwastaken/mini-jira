@@ -1,3 +1,4 @@
+
 #{extends 'main.html'/}
 
 
@@ -6,18 +7,28 @@
     <li>${task.name}:<br />
 
         Date de création: ${task.creation}
-        *{@{if (task.urgent == 1) }*
+    *{@{if (task.urgent == 1) }*
 
+
+        Nom de la tache: ${task.name} ${task.urgent ? "" : "(Urgent)"} <br />
+        Description: ${task.content} <br />
         <form action="@{TaskController.changeUserTask}" method="post">
-            Nom de la tache: ${task.name} ${task.urgent ? "" : "(Urgent)"} <br />
-            Description: ${task.content} <br />
             <a>Utilisateur associé:<SELECT name="userId" >
-                                        #{list items:listUsers, as:'user'}
-                                            <OPTION value="${user.id}" ${(task.user && (user.id == task.user.id)) ? "selected" : ""}>${user.name}</OPTION>
-                                        #{/list}
-                                    </SELECT>
-                                    <input type="hidden" name="taskId" value="${task.id}" />
+                #{list items:listUsers, as:'user'}
+                    <OPTION value="${user.id}" ${(task.user && (user.id == task.user.id)) ? "selected" : ""}>${user.name}</OPTION>
+                #{/list}
+            </SELECT>
+                <input type="hidden" name="taskId" value="${task.id}" />
                 <input type="submit" value="Changer utilisateur" /><br>
+        </form>
+        <form action="@{TaskController.changeStatusTask}" method="post">
+            <a>Statut:<SELECT name="statusId" >
+                #{list items:listUsers, as:'user'}
+                    <OPTION value="${user.id}" ${(task.user && (user.id == task.user.id)) ? "selected" : ""}>${user.name}</OPTION>
+                #{/list}
+            </SELECT>
+                <input type="hidden" name="taskId" value="${task.id}" />
+                <input type="submit" value="Changer statut" /><br>
         </form>
     </li>
 #{/list}
