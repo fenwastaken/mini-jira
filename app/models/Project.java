@@ -14,7 +14,7 @@ public class Project extends Model {
 	Timestamp creation;
 	
 	
-	public Project(String name, Timestamp creation) {
+	public Project(String name) {
 		super();
 		this.name = name;
 		this.creation = new Timestamp(System.currentTimeMillis());
