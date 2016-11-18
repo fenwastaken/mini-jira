@@ -3,7 +3,10 @@ package models;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import play.db.jpa.Model;
 
@@ -13,7 +16,6 @@ public class Project extends Model {
 	//id
 	public String name;
 	public String description;
-	public Date creation;
 
 	@Column(columnDefinition="DATETIME")
 	@Temporal(TemporalType.TIMESTAMP)

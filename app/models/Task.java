@@ -18,7 +18,6 @@ public class Task extends Model {
 	public boolean urgent;
 	
 	@Column(columnDefinition="DATETIME")
-	@Temporal(TemporalType.TIMESTAMP) 
 	public Date creation;
 
 	@OneToOne
