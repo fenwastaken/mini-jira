@@ -8,6 +8,8 @@ import play.mvc.With;
 
 import java.util.List;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 /**
  * Created by Formation on 17/11/2016.
  */
@@ -22,7 +24,7 @@ public class UserController extends Controller{
         User user = new User();
         user.name = name;
         user.avatar = avatar;
-        user.password = password;
+        user.password = BCrypt.hashpw(password, BCrypt.gensalt(12));
         user.save();
         //render(user);
         displayAll();
