@@ -1,0 +1,67 @@
+#{extends 'main.html'/}
+
+<table id="list_task" style="border: solid; background-color: #568C00">
+    <thead>
+        <tr>
+            <th>Status de tâches</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="urgent" style="border: solid; background-color: pink">
+            <td>
+        #{list items:listTasks, as:'task'}
+        #{if !task.urgent}
+                <div id="Task${task.id}">${task.name}:<br />
+                    #{if task.creation}
+                        Date de création: ${task.creation.format("dd/MM/yyyy")}
+                    #{/if}
+                    <form action="@{TaskController.changeUserTask}" method="post">
+                        Nom de la tache: ${task.name} ${task.urgent ? "" : "(Urgent)"} <br />
+                        Description: ${task.content} <br />
+                        <a> Utilisateur associé:<SELECT name="userId" >
+                            #{list items:listUsers, as:'user'}
+                                <OPTION value="${user.id}" ${(task.user && (user.id == task.user.id)) ? "selected" : ""}>${user.name}</OPTION>
+                            #{/list}
+                        </SELECT>
+                        </a>
+                        <input type="hidden" name="taskId" value="${task.id}" />
+                        <input type="submit" value="Changer utilisateur" /><br>
+                    </form>
+                </div>
+        #{/if}
+        #{/list}
+            </td>
+        </tr>
+        <tr id="non_urgent" style="border: solid; background-color: blue">
+            <td>
+            #{list items:listTasks, as:'task'}
+            #{if task.urgent}
+                <div id="Task${task_id}">${task.name}:<br />
+
+                    #{if task.creation}
+                        Date de création: ${task.creation.format("dd/MM/yyyy")}
+                    #{/if}
+
+                    <form action="@{TaskController.changeUserTask}" method="post">
+                        Nom de la tache: ${task.name} ${task.urgent ? "" : "(Urgent)"} <br />
+                        Description: ${task.content} <br />
+                        <a> Utilisateur associé:<SELECT name="userId" >
+                            #{list items:listUsers, as:'user'}
+                                <OPTION value="${user.id}" ${(task.user && (user.id == task.user.id)) ? "selected" : ""}>${user.name}</OPTION>
+                            #{/list}
+                        </SELECT>
+                        </a>
+                        <input type="hidden" name="taskId" value="${task.id}" />
+                        <input type="submit" value="Changer utilisateur" /><br>
+                    </form>
+                </div>
+            #{/if}
+            #{/list}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<a href="@{Application.index}">Retour vers l'accueil</a>
