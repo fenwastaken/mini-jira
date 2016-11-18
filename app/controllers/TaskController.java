@@ -17,7 +17,7 @@ public class TaskController extends Controller{
         render(listProjects, status); }
 
     //add this back in the params once projects are manageable: @Required int idProject
-    public static void save(@Required String name, @Required String content, @Required Boolean urgent){
+    public static void save(@Required String name, @Required String content, @Required Boolean urgent, @Required Long projectId){
         if (validation.hasErrors()) {
             params.flash();
             validation.keep();
@@ -28,7 +28,7 @@ public class TaskController extends Controller{
         task.name = name;
         task.content = content;
         task.urgent = urgent;
-        task.project = Project.find("").first(); //cheat line
+        task.project = Project.findById(projectId);
         task.save();
         //render(task);
         displayAll();
