@@ -11,12 +11,13 @@
         <form action="@{TaskController.changeUserTask}" method="post">
             Nom de la tache: ${task.name} ${task.urgent ? "" : "(Urgent)"} <br />
             Description: ${task.content} <br />
-            <a>Utilisateur associé:<SELECT name="user" >
+            <a>Utilisateur associé:<SELECT name="userId" >
                                         #{list items:listUsers, as:'user'}
                                             <OPTION value="${user.id}" ${(task.user && (user.id == task.user.id)) ? "selected" : ""}>${user.name}</OPTION>
                                         #{/list}
                                     </SELECT>
-                <input type="submit" value="Changer utilisateur"><br>
+                                    <input type="hidden" name="taskId" value="${task.id}" />
+                <input type="submit" value="Changer utilisateur" /><br>
         </form>
     </li>
 #{/list}
