@@ -2,18 +2,19 @@ package controllers;
 
 
 import models.Project;
+import models.Status;
 import models.Task;
 import models.User;
 import play.data.validation.*;
 import play.mvc.Controller;
-import play.mvc.results.Status;
 
 import java.util.List;
 
 public class TaskController extends Controller{
-    public static void create(){ 
-    List<Project> listProjects = Project.findAll();
-    render(listProjects); }
+    public static void create(){
+        List<Project> listProjects = Project.findAll();
+        List<Status> status = Status.findAll();
+        render(listProjects, status); }
 
     //add this back in the params once projects are manageable: @Required int idProject
     public static void save(@Required String name, @Required String content, @Required Boolean urgent){
@@ -30,14 +31,14 @@ public class TaskController extends Controller{
         task.project = Project.find("").first(); //cheat line
         task.save();
         //render(task);
-        displayAllTemp();
+        displayAll();
     }
 
     public void initTasks(List<Task> listTasks){
 
     }
 
-    public static void displayAllTemp(){
+    public static void displayAll(){
         List<Task> listTasks = Task.find("ORDER BY urgent").fetch();
         List<User> listUsers = User.findAll();
         render(listTasks, listUsers);
@@ -54,7 +55,7 @@ public class TaskController extends Controller{
         Task task = Task.findById(taskId);
         task.user = User.findById(userId);
         task.save();
-        displayAllTemp();
+        displayAll();
         //displayall();
         redirect("/");
     }
