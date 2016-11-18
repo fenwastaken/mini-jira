@@ -6,6 +6,7 @@ import models.Task;
 import models.User;
 import play.data.validation.*;
 import play.mvc.Controller;
+import play.mvc.results.Status;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -40,8 +41,9 @@ public class TaskController extends Controller{
 
     public static void displayAllTable(){
         List<Task> listTasks = Task.find("ORDER BY urgent").fetch();
-
-        render(listTasks);
+        List<User> listUsers = User.findAll();
+        //List<Status> listStatus = Status.findAll();
+        render(listTasks, listUsers);
     }
 
     public static void changeUserTask(Long taskId, Long userId){
