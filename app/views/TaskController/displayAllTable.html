@@ -11,7 +11,7 @@
             <td>
         #{list items:listTasks, as:'task'}
         #{if !task.urgent}
-                <div id="Task${task.id}">${task.name}:<br />
+                <div id="Task${task.id}"><b>${task.name}:</b><br />
                     #{if task.creation}
                         Date de création: ${task.creation.format("dd/MM/yyyy")}
                     #{/if}
@@ -38,6 +38,7 @@
                         *{</form>}*
                 </div>
         #{/if}
+        <br>
         #{/list}
             </td>
         </tr>
