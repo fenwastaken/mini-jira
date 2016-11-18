@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskController extends Controller{
-    public static void create(){ render(); }
+    public static void create(){ 
+    List<Project> listProjects = Project.findAll();
+    render(listProjects); }
 
     //add this back in the params once projects are manageable: @Required int idProject
     public static void save(@Required String name, @Required String content, @Required Boolean urgent){
@@ -35,8 +37,7 @@ public class TaskController extends Controller{
     public static void displayAll(){
         List<Task> listTasks = Task.find("ORDER BY urgent").fetch();
         List<User> listUsers = User.findAll();
-        List<Project> listProjects = Project.findAll();
-        render(listTasks, listUsers, listProjects);
+        render(listTasks, listUsers);
     }
 
     public static void displayAllTable(){
