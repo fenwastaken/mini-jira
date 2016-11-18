@@ -1,6 +1,7 @@
 package controllers;
 
 
+import models.Project;
 import models.Task;
 import models.User;
 import play.data.validation.*;
@@ -25,7 +26,7 @@ public class TaskController extends Controller{
         task.name = name;
         task.content = content;
         task.urgent = urgent;
-        task.project.id = Long.valueOf(1); //cheat line
+        //task.project.id = Long.valueOf(1); //cheat line
         task.save();
         //render(task);
         displayall();

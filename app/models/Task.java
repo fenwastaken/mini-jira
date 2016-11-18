@@ -3,7 +3,9 @@ package models;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Task extends Model {
@@ -25,6 +27,11 @@ public class Task extends Model {
 	public Task() {
 		super();
 		this.creation = new Date();
+        List<Project> listProject = new ArrayList<Project>();
+        listProject = Project.findAll();
+        if (listProject == null || listProject.isEmpty()){
+            project = new Project();
+        }
 	}
 	
 	public Task(String name, String content, boolean urgent, Project project) {
