@@ -1,21 +1,23 @@
 package models;
 
+import play.db.jpa.Model;
+
 import javax.persistence.OneToOne;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-public class TaskStatus {
+public class TaskStatus extends Model{
 
 	@OneToOne
 	public Task task;
-	String idTask;
-	String idStatus;
+	@OneToOne
+	public Status status;
 	Timestamp date;
 
-	public TaskStatus(String idTask, String idStatus) {
+	public TaskStatus(Task task, Status status) {
 		super();
-		this.idTask = idTask;
-		this.idStatus = idStatus;
+		this.status = status;
+		this.task = task;
 		this.date = new Timestamp(System.currentTimeMillis());
 	}
 	
