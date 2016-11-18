@@ -18,21 +18,22 @@ public class Task extends Model {
 	@Column(columnDefinition="DATETIME")
 	@Temporal(TemporalType.TIMESTAMP) 
 	public Date creation;
-	
-	public int idProject;
+
+	@OneToOne
+	public Project project;
 	
 	public Task() {
 		super();
 		this.creation = new Date();
 	}
 	
-	public Task(String name, String content, boolean urgent, int idProject) {
+	public Task(String name, String content, boolean urgent, Project project) {
 		super();
 		this.name = name;
 		this.content = content;
 		this.urgent = urgent;		
 		this.creation = new Date();
-		this.idProject = idProject;
+		this.project = project;
 	}
 	
 }

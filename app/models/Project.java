@@ -10,13 +10,15 @@ import play.db.jpa.Model;
 public class Project extends Model {
 
 	//id
-	String name;
-	Timestamp creation;
+	public String name;
+	public String description;
+	public Timestamp creation;
 	
 	
-	public Project(String name, Timestamp creation) {
+	public Project(String name, String description) {
 		super();
 		this.name = name;
+		this.description = description;
 		this.creation = new Timestamp(System.currentTimeMillis());
 	}
 	

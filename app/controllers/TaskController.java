@@ -41,9 +41,12 @@ public class TaskController extends Controller{
         Task task = Task.findById(taskId);
         task.user = User.findById(userId);
         task.save();
-        displayall();
+        //displayall();
+        redirect("/");
     }
-    public static void afficher(){
+
+    public static void changeStatusTask(Long taskId, Long tasId){
+    //public static void afficher(){
 
     }
 
