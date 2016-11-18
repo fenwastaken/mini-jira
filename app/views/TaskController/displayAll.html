@@ -24,8 +24,8 @@
         </form>
         <form action="@{TaskController.changeStatusTask}" method="post">
             <a>Statut:<SELECT name="statusId" >
-                #{list items:listUsers, as:'user'}
-                    <OPTION value="${user.id}" ${(task.user && (user.id == task.user.id)) ? "selected" : ""}>${user.name}</OPTION>
+                #{list items:status, as:'statut'}
+                    <OPTION value="${statut.id}" ${(task.taskStatus && (task.taskStatus.status.id == statut.id)) ? "selected" : ""}>${statut.name}</OPTION>
                 #{/list}
             </SELECT>
                 <input type="hidden" name="taskId" value="${task.id}" />

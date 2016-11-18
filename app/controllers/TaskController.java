@@ -46,7 +46,8 @@ public class TaskController extends Controller{
     public static void displayAll(){
         List<Task> listTasks = Task.find("ORDER BY urgent").fetch();
         List<User> listUsers = User.findAll();
-        render(listTasks, listUsers);
+        List<Status> status = Status.findAll();
+        render(listTasks, listUsers, status);
     }
 
     public static void displayAllTable(){
@@ -65,9 +66,11 @@ public class TaskController extends Controller{
         redirect("/");
     }
 
-    public static void changeStatusTask(Long taskId, Long tasId){
-    //public static void afficher(){
-
+    public static void changeStatusTask(Long taskId, Long statusId){
+        Task task = Task.findById(taskId);
+        task.taskStatus.status = Status.findById(statusId);
+        task.save();
+        redirect("/");
     }
 
 }
