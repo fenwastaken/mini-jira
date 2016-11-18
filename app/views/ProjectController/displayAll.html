@@ -1,15 +1,42 @@
 #{extends 'main.html'/}
 
+<form id="selectProject">
+    <fieldset>
+        <legend>Liste des projet</legend>
 
-<ul>
-	#{list items:listProjects, as:'project'}
-	<li>Projet:${project.name}, Description:${project.description}</li>
-	#{/list}
-</ul>
+        projet selectionné: <SELECT name="projectId">
+    #{list items:listProjects, as:'project'}
+        <Option value="${project.id}">${project.name}</Option>
+    #{/list}
+    </SELECT>
+        <input type="submit" value="selectionner"/>
+
+    </fieldset>
+</form>
+<div id="infoProject">
+    <fieldset>
+        <legend>Information sur le projet</legend>
+        <div id="ajaxResponse"></div>
+    </fieldset>
+</div>
 
 
 
-<input type="submit" value="Créer Tâche">
-<br>
-<a href="/"><img src="http://i.imgur.com/UFsqRGa.gif" height="80"
-	width="auto"></img></a>
+*{<form method="post" action=@{ProjectController.selectProject}>}*
+    *{projet selectionné: <SELECT name="projectId">}*
+*{#{list items:listProjects, as:'project'}}*
+    *{<Option value="${project.id}">${project.name}</Option>}*
+*{#{/list}}*
+*{</SELECT>}*
+    *{<input type="submit" value="selectionner"/>}*
+*{</form>}*
+
+*{<div id="infoProject">}*
+
+
+*{</div>}*
+<a href="@{Application.index}">Retour vers l'accueil</a>
+
+
+
+

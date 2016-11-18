@@ -26,14 +26,22 @@ public class ProjectController extends Controller {
         displayAll();
     }
 
-	public static void displayAll(){
-       List<Project> listProjects = Project.findAll();
-       render(listProjects);
+    public static void displayAll(){
+        List<Project> listProjects = Project.findAll();
+        render(listProjects);
+
     }
+
+
 
     public static void changeProjectTask(){
         displayAll();
 
+    }
+
+    public static void selectProject(Long projectId){
+        Project project = Project.findById(projectId);
+        renderJSON(project);
     }
 	
 }
