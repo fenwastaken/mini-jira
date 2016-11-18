@@ -23,6 +23,9 @@ public class Task extends Model {
 
 	@OneToOne
 	public Project project;
+
+    @OneToOne
+    public TaskStatus taskStatus;
 	
 	public Task() {
 		super();
