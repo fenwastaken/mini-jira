@@ -22,18 +22,15 @@ public class Task extends Model {
 
 	@OneToOne
 	public Project project;
-
-    @OneToOne
-    public TaskStatus taskStatus;
 	
 	public Task() {
 		super();
 		this.creation = new Date();
-        List<Project> listProject = new ArrayList<Project>();
-        listProject = Project.findAll();
-        if (listProject == null || listProject.isEmpty()){
-            project = new Project();
-        }
+//        List<Project> listProjects = new ArrayList<Project>();
+//        listProjects = Project.findAll();
+//        if (listProjects == null || listProjects.isEmpty()){
+//            project = new Project();
+//        }
 	}
 	
 	public Task(String name, String content, boolean urgent, Project project) {

@@ -13,12 +13,10 @@ import play.db.jpa.Model;
 @Entity
 public class Project extends Model {
 
-	//id
 	public String name;
 	public String description;
 
 	@Column(columnDefinition="DATETIME")
-	@Temporal(TemporalType.TIMESTAMP)
 	public Date creation;
 	
 	public Project(){
