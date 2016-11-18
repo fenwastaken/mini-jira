@@ -28,10 +28,10 @@ public class TaskController extends Controller{
         task.idProject = 1; //cheat line
         task.save();
         //render(task);
-        displayall();
+        displayAll();
     }
 
-    public static void displayall(){
+    public static void displayAll(){
         List<Task> listTasks = Task.findAll();
         List<User> listUsers = User.findAll();
         render(listTasks, listUsers);
@@ -41,7 +41,7 @@ public class TaskController extends Controller{
         Task task = Task.findById(taskId);
         task.user = User.findById(userId);
         task.save();
-        displayall();
+        displayAll();
     }
     public static void afficher(){
 

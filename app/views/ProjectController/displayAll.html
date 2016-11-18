@@ -1,0 +1,12 @@
+#{extends 'main.html'/}
+
+
+<ul>
+#{list items:listProjects, as:'project'}
+    <li>Projet:${project.name},  Description:${project.description}</li>
+#{/list}
+</ul>
+
+
+
+<a href="@{Application.index}">Retour vers l'accueil</a>

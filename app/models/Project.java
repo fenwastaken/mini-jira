@@ -1,6 +1,7 @@
 package models;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Entity;
 
@@ -12,7 +13,7 @@ public class Project extends Model {
 	//id
 	public String name;
 	public String description;
-	public Timestamp creation;
+	public Date creation;
 	
 	
 	public Project(String name, String description) {

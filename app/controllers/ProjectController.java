@@ -23,16 +23,16 @@ public class ProjectController extends Controller {
         project.description = description;
         project.save();
         //render(Project);
-        displayall();
+        displayAll();
     }
 
-	public static void displayall(){
-       // List<Project> listProjects = Project.findAll();
-        //render(listProjects);
+	public static void displayAll(){
+       List<Project> listProjects = Project.findAll();
+       render(listProjects);
     }
 
     public static void changeProjectTask(){
-        displayall();
+        displayAll();
 
     }
 	
