@@ -1,15 +1,9 @@
 package models;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
 import play.db.jpa.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Task extends Model {
