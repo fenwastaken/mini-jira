@@ -6,7 +6,8 @@
 </head>
 <body>
 	<h1>TÂCHE</h1>
-
+<img src="http://i.imgur.com/7YQnT9T.png" height="200" width="auto"></img>
+<br>
 	<form action="@{TaskController.save}" method="post">
 		Projet: <select name="projectId"> #{list items:listProjects, as:'Project'}
 			<option value="${Project.id}">${Project.name}</option> #{/list}
