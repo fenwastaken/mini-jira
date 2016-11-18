@@ -2,7 +2,12 @@ package models;
 
 import java.sql.Timestamp;
 
-public class Project {
+import javax.persistence.Entity;
+
+import play.db.jpa.Model;
+
+@Entity
+public class Project extends Model {
 
 	//id
 	String name;

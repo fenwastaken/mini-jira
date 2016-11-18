@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Création de projet</title>
+</head>
+<body>
+<h1>Projet:</h1>
+
+<form action="@{ProjectController.save}" method="post">
+    Nom :<input type="text" name="name" value=""/><br/>
+    Description :<input type="text" name="content"/><br/>
+    <input type="submit" value="Créer projet"><br>
+    <a href="/">Retour</a>
+</form>
+
+</body>
+</html>
