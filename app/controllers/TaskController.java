@@ -35,7 +35,8 @@ public class TaskController extends Controller{
     public static void displayAll(){
         List<Task> listTasks = Task.find("ORDER BY urgent").fetch();
         List<User> listUsers = User.findAll();
-        render(listTasks, listUsers);
+        List<Project> listProjects = Project.findAll();
+        render(listTasks, listUsers, listProjects);
     }
 
     public static void displayAllTable(){
