@@ -25,7 +25,7 @@ public class TaskController extends Controller{
         task.name = name;
         task.content = content;
         task.urgent = urgent;
-        task.idProject = 1; //cheat line
+        task.project.id = Long.valueOf(1); //cheat line
         task.save();
         //render(task);
         displayall();
