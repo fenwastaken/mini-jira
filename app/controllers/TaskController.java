@@ -3,6 +3,7 @@ package controllers;
 
 import models.Project;
 import models.Status;
+import models.TaskStatus;
 import models.Task;
 import models.User;
 import play.data.validation.*;
@@ -17,7 +18,7 @@ public class TaskController extends Controller{
         render(listProjects, status); }
 
     //add this back in the params once projects are manageable: @Required int idProject
-    public static void save(@Required String name, @Required String content, @Required Boolean urgent, @Required Long projectId){
+    public static void save(@Required String name, @Required String content, @Required Boolean urgent, @Required Long projectId, @Required Long statusId){
         if (validation.hasErrors()) {
             params.flash();
             validation.keep();
@@ -25,10 +26,14 @@ public class TaskController extends Controller{
         }
 
         Task task = new Task();
+        Status status = Status.findById(statusId);
+
         task.name = name;
         task.content = content;
         task.urgent = urgent;
+//        task.project = Project.find("").first(); //cheat line
         task.project = Project.findById(projectId);
+        task.taskStatus = new TaskStatus(task,status);
         task.save();
         //render(task);
         displayAll();

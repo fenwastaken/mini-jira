@@ -29,5 +29,5 @@ public class TaskStatus extends Model{
 		this.task = task;
 		this.creation = new Date();
 	}
-	
+
 }
