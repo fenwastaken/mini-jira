@@ -38,6 +38,12 @@ public class TaskController extends Controller{
         render(listTasks, listUsers);
     }
 
+    public static void displayAllTable(){
+        List<Task> listTasks = Task.find("ORDER BY urgent").fetch();
+
+        render(listTasks);
+    }
+
     public static void changeUserTask(Long taskId, Long userId){
         Task task = Task.findById(taskId);
         task.user = User.findById(userId);
