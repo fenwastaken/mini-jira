@@ -1,15 +1,11 @@
 package models;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
 import play.db.jpa.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Task extends Model {
@@ -24,21 +20,27 @@ public class Task extends Model {
 	@Column(columnDefinition="DATETIME")
 	@Temporal(TemporalType.TIMESTAMP) 
 	public Date creation;
-	
-	public int idProject;
+
+	@OneToOne
+	public Project project;
 	
 	public Task() {
 		super();
 		this.creation = new Date();
+        List<Project> listProject = new ArrayList<Project>();
+        listProject = Project.findAll();
+        if (listProject == null || listProject.isEmpty()){
+            project = new Project();
+        }
 	}
 	
-	public Task(String name, String content, boolean urgent, int idProject) {
+	public Task(String name, String content, boolean urgent, Project project) {
 		super();
 		this.name = name;
 		this.content = content;
 		this.urgent = urgent;		
 		this.creation = new Date();
-		this.idProject = idProject;
+		this.project = project;
 	}
 	
 }
