@@ -37,9 +37,11 @@ public class TaskController extends Controller{
         render(listTasks, listUsers);
     }
 
-    public static void changeUserTask(){
+    public static void changeUserTask(Long taskId, Long userId){
+        Task task = Task.findById(taskId);
+        task.user = User.findById(userId);
+        task.save();
         displayall();
-
     }
     public static void afficher(){
 
