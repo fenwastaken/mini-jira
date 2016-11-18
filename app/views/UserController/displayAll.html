@@ -2,11 +2,15 @@
 
 
 <ul>
-#{list items:listUsers, as:'user'}
-    <li>Nom:${user.name},  Password:${user.password}, Avatar:<a href="${user?.avatar}"><image src=${user?.avatar} height=100 width=auto></image></a></li>
-#{/list}
+	#{list items:listUsers, as:'user'}
+	<li>Nom:${user.name}, Password:${user.password}, Avatar:<a
+		href="${user?.avatar}"><image src=${user?.avatar} height=100
+				width=auto></image></a></li> #{/list}
 </ul>
 
 
 
-<a href="@{Application.index}">Retour vers l'accueil</a>
+<input type="submit" value="Créer Tâche">
+<br>
+<a href="/"><img src="http://i.imgur.com/UFsqRGa.gif" height="80"
+	width="auto"></img></a>
