@@ -1,8 +1,11 @@
 package models;
 
-import java.util.UUID;
+import javax.persistence.Entity;
 
-public class Status {
+import play.db.jpa.Model;
+
+@Entity
+public class Status extends Model{
 	
 	String name;
 	

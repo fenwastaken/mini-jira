@@ -3,7 +3,9 @@ package models;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Task extends Model {
@@ -16,7 +18,6 @@ public class Task extends Model {
 	public boolean urgent;
 	
 	@Column(columnDefinition="DATETIME")
-	@Temporal(TemporalType.TIMESTAMP) 
 	public Date creation;
 
 	@OneToOne
@@ -25,6 +26,11 @@ public class Task extends Model {
 	public Task() {
 		super();
 		this.creation = new Date();
+//        List<Project> listProjects = new ArrayList<Project>();
+//        listProjects = Project.findAll();
+//        if (listProjects == null || listProjects.isEmpty()){
+//            project = new Project();
+//        }
 	}
 	
 	public Task(String name, String content, boolean urgent, Project project) {

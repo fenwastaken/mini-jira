@@ -1,6 +1,7 @@
 package controllers;
 
 
+import models.Project;
 import models.Task;
 import models.User;
 import play.data.validation.*;
@@ -25,13 +26,13 @@ public class TaskController extends Controller{
         task.name = name;
         task.content = content;
         task.urgent = urgent;
-        task.project.id = Long.valueOf(1); //cheat line
+        task.project = Project.find("").first(); //cheat line
         task.save();
         //render(task);
-        displayall();
+        displayAll();
     }
 
-    public static void displayall(){
+    public static void displayAll(){
         List<Task> listTasks = Task.find("ORDER BY urgent").fetch();
         List<User> listUsers = User.findAll();
         render(listTasks, listUsers);
@@ -47,6 +48,7 @@ public class TaskController extends Controller{
         Task task = Task.findById(taskId);
         task.user = User.findById(userId);
         task.save();
+        displayAll();
         //displayall();
         redirect("/");
     }
